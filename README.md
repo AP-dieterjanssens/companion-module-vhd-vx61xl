@@ -12,7 +12,7 @@ documented for this camera family (which differs in places from the
 VX-90's encoding — see below).
 
 This is a sister module to
-[companion-module-vhd-vx90](https://github.com/AP-dieterjanssens/companion-module-vhd-vx90).
+[companion-module-vhd-vx90](https://github.com/bitfocus/companion-module-vhd-vx90).
 The two camera families share most of their VISCA protocol but not
 all of it, so each module uses the byte encoding actually documented
 for its own camera rather than assuming they're identical.
@@ -51,12 +51,12 @@ Companion admin UI.
 ## Development
 
 ```
-npm install
-npm run build   # via @companion-module/tools, produces the .tgz package
+corepack enable
+yarn install
+yarn companion-module-build   # via @companion-module/tools, produces the .tgz package
 ```
 
-Run `npx @companion-module/tools companion-module-check` to validate
-the manifest and module structure before submitting a new version.
+This repository uses yarn; don't commit a `package-lock.json`.
 
 ## Testing status
 

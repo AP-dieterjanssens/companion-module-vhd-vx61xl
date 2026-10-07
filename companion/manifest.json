@@ -2,11 +2,12 @@
 	"id": "vhd-vx61xl",
 	"name": "VHD VX61XL / V60 PTZ Camera",
 	"shortname": "vx61xl",
+	"type": "connection",
 	"description": "Control the VHD VX61XL / V60 family PTZ cameras over VISCA/IP (TCP, port 5678 by default).",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "",
-	"bugs": "",
+	"repository": "https://github.com/bitfocus/companion-module-vhd-vx61xl",
+	"bugs": "https://github.com/bitfocus/companion-module-vhd-vx61xl/issues",
 	"manufacturer": "VHD",
 	"maintainers": [
 		{
@@ -17,8 +18,8 @@
 	"runtime": {
 		"type": "node22",
 		"api": "nodejs-ipc",
-		"apiVersion": "1.14.1",
-		"entrypoint": "main.js"
+		"apiVersion": "0.0.0",
+		"entrypoint": "../main.js"
 	},
 	"legacyIds": [],
 	"products": ["VX61XL", "V60", "VX60ASL", "VX61ASL", "VX61BASL", "VX751BA", "VX752A", "V60XL", "V61XL", "V63XL", "V60XS", "V61XS", "V63XS"],

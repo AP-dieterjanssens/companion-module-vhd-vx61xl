@@ -11,6 +11,7 @@ class VX61XLInstance extends InstanceBase {
 		this.socket = null
 		this.reconnectTimer = null
 		this.connected = false
+		this.badConfig = false
 	}
 
 	async init(config) {
@@ -77,9 +78,11 @@ class VX61XLInstance extends InstanceBase {
 
 	initConnection() {
 		if (!this.config?.host) {
+			this.badConfig = true
 			this.updateStatus(InstanceStatus.BadConfig, 'No camera IP configured')
 			return
 		}
+		this.badConfig = false
 
 		this.socket = new net.Socket()
 
@@ -98,7 +101,7 @@ class VX61XLInstance extends InstanceBase {
 
 		this.socket.on('close', () => {
 			this.connected = false
-			if (this.currentStatus?.status !== InstanceStatus.BadConfig) {
+			if (!this.badConfig) {
 				this.updateStatus(InstanceStatus.Disconnected)
 				this.setVariableValues({ connection_status: 'Disconnected' })
 			}

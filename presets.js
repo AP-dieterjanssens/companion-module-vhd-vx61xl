@@ -61,7 +61,13 @@ function getPresetDefinitions(instance) {
 			name: 'Connection status',
 			style: { ...basicStyle, text: 'VX61XL\\n$(vhd-vx61xl:connection_status)' },
 			steps: [{ down: [], up: [] }],
-			feedbacks: [{ feedbackId: 'connected', options: {} }],
+			feedbacks: [
+				{
+					feedbackId: 'connected',
+					options: {},
+					style: { bgcolor: combineRgb(0, 200, 0), color: combineRgb(0, 0, 0) },
+				},
+			],
 		},
 	}
 }

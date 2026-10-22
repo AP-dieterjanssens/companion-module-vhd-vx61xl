@@ -1,11 +1,11 @@
-// visca.js — low-level VISCA byte-building helpers for the VHD VX-90 module.
+// visca.js — low-level VISCA byte-building helpers for the VHD VX61XL / V60-family module.
 // All the actual command byte layouts come from VHD's official
-// "VX90_VISCA_EN_20250729" command table.
+// "Command list EN VHD V60" VISCA table.
 
 /**
  * Split an unsigned integer into `count` hex-digit bytes (each 0x00-0x0F,
  * optionally OR'd with a fixed high nibble). This is the "0p 0q 0r 0s"-style
- * encoding used throughout the VX-90 table for multi-digit values (zoom
+ * encoding used throughout the V60 table for multi-digit values (zoom
  * position, focus position, pan/tilt position, etc).
  */
 function nibbleBytes(value, count, highNibble = 0) {

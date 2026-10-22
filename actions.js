@@ -96,7 +96,7 @@ function getActionDefinitions(instance) {
 		callback: (event) => send([0x01, 0x04, 0x07, 0x30 | (Number(event.options.value) & 0x0f)]),
 	}
 	actions.zoom_to = {
-		name: 'Zoom: Direct Position (0-4000)',
+		name: 'Zoom: Direct Position (0-16384)',
 		options: [{ id: 'value', type: 'number', label: 'Zoom position', min: 0, max: 0x4000, default: 0 }],
 		callback: (event) => send([0x01, 0x04, 0x47, ...nibbleBytes(Number(event.options.value), 4)]),
 	}
